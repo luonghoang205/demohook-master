@@ -12,16 +12,16 @@ export default function TaskList({
 }) {
   return (
     <div>
-      {/* Khu vực Lọc và Tìm kiếm */}
+      
       <div style={{ display: 'flex', gap: '10px', marginBottom: '15px' }}>
-        {/* Dropdown chọn trạng thái */}
+        
         <select value={filter} onChange={(e) => onFilterChange(e.target.value)} style={{ padding: '8px' }}>
           <option value="all">Tất cả ▼</option>
           <option value="uncompleted">Chưa làm</option>
           <option value="completed">Hoàn thành</option>
         </select>
 
-        {/* Ô nhập từ khóa tìm kiếm */}
+        
         <input
           type="text"
           placeholder="Tìm kiếm................"
@@ -31,15 +31,15 @@ export default function TaskList({
         />
       </div>
 
-      {/* Danh sách công việc */}
+      
       <div>
         {tasks.length === 0 ? (
           <p style={{ textAlign: 'center', color: '#888' }}>Không tìm thấy công việc nào</p>
         ) : (
-          // Duyệt mảng hiển thị từng TaskItem
+          
           tasks.map((task) => (
             <TaskItem
-              key={task.id} // Key định danh duy nhất cho từng phẩn tử khi map
+              key={task.id} 
               task={task}
               onToggleTask={onToggleTask}
               onDeleteTask={onDeleteTask}
